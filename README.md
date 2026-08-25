@@ -2,12 +2,18 @@
 
 Sabit APK indirme sayfaları — [Bakım Proforma App](https://github.com/lahmacunor)
 için. Her yeni build'de bu repodaki `panel.html` / `app.html` içindeki link
-güncellenir, Berkay'a hep aynı jsDelivr adresi gönderilir.
+güncellenir, Berkay'a hep aynı GitHub Pages adresi gönderilir.
 
-## Adresler (jsDelivr üzerinden)
+## Adresler (GitHub Pages üzerinden)
 
-- Panel: `https://cdn.jsdelivr.net/gh/lahmacunor/bakim-proforma-apk@main/panel.html`
-- App: `https://cdn.jsdelivr.net/gh/lahmacunor/bakim-proforma-apk@main/app.html`
+- Panel: `https://lahmacunor.github.io/bakim-proforma-apk/panel.html`
+- App: `https://lahmacunor.github.io/bakim-proforma-apk/app.html`
+
+**Not (2026-08-25):** İlk denemede jsDelivr kullanılmıştı ama jsDelivr
+`.html` dosyalarını `Content-Type: text/plain` ile sunuyor —
+tarayıcı sayfayı render etmek yerine kaynak kodu olarak gösteriyordu.
+GitHub Pages doğru `text/html` content-type ile sunduğu için buna
+geçildi (`gh api -X POST repos/lahmacunor/bakim-proforma-apk/pages`).
 
 ## Neden
 
@@ -21,6 +27,6 @@ her zaman aynı olduğu için eski build'ler telefonda birikmiyor.
 ## Güncelleme
 
 `panel.html` / `app.html` içindeki `<a class="btn" href="...">` satırındaki
-linki ve "Son güncelleme" tarihini değiştir, commit+push et. jsDelivr cache
-gecikmesi olursa `https://purge.jsdelivr.net/gh/lahmacunor/bakim-proforma-apk@main/panel.html`
-adresine bir GET isteği at.
+linki ve "Son güncelleme" tarihini değiştir, commit+push et. GitHub Pages
+genelde saniyeler içinde günceller, gecikirse birkaç dakika bekleyip
+tekrar dene.
